@@ -1,2 +1,3 @@
-const EMPTY_SYMBOL = Symbol();
-export type EmptyType = {[EMPTY_SYMBOL]?: never};
+declare const _empty: unique symbol;
+
+export type EmptyType = {[_empty]?: never};
