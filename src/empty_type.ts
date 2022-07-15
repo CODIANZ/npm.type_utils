@@ -1,3 +1,3 @@
-declare const _empty: unique symbol;
+declare const _codianz_empty_symbol: unique symbol;
 
-export type EmptyType = {[_empty]?: never};
+export type EmptyType = {[_codianz_empty_symbol]?: never};

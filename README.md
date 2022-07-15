@@ -1,5 +1,24 @@
 # type_utilities
 
+
+## Tuple Creators
+
+### Repeat
+
+```ts
+type X = Repeat<true, 5>; /* [true, true, true, true, true] */
+```
+
+## Tuple Operators
+
+### Flatten
+
+```ts
+type X = TupleFlatten<[[[1], 2], [3, 4], 5]>; /* 1, 2, 3, 4, 5 */
+type Y = Repeat<[true, false], 2>; /* [[true, false], [true, false]] */
+type Z = TupleFlatten<Y>; /* [true, false, true, false] */
+```
+
 ## EmptyType
 
 ### description

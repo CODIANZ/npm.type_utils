@@ -1,6 +1,6 @@
 import { TuplePopBack, TuplePopFront, TupleBack } from "./tuple";
 
-export type Numbers = [
+export type NumberTuple = [
    0,   1,   2,   3,   4,   5,   6,   7,   8,   9,
   10,  11,  12,  13,  14,  15,  16,  17,  18,  19,
   20,  21,  22,  23,  24,  25,  26,  27,  28,  29,
@@ -112,17 +112,18 @@ export type Numbers = [
  990, 991, 992, 993, 994, 995, 996, 997, 998, 999
 ];
 
-declare const _underflow: unique symbol;
-declare const _overflow: unique symbol;
+declare const _codianz_underflow_symbol: unique symbol;
+declare const _codianz_overflow_symbol: unique symbol;
 
-export type Underflow = typeof _underflow;
-export type Overflow = typeof _overflow;
+export type Underflow = typeof _codianz_underflow_symbol;
+export type Overflow = typeof _codianz_overflow_symbol;
 export type OutOfRange = Underflow | Overflow;
 export type MinNumber = 0;
-export type MaxNumber = TupleBack<Numbers>;
+export type MaxNumber = TupleBack<NumberTuple>;
+export type Numbers = NumberTuple[number];
 
-type Decrements = [Underflow, ...TuplePopBack<Numbers>];
-type Increments = [...TuplePopFront<Numbers>, Overflow];
+type DecrementTuple = [Underflow, ...TuplePopBack<NumberTuple>];
+type IncrementTuple = [...TuplePopFront<NumberTuple>, Overflow];
 
-export type Decrement<N extends Numbers[number] | OutOfRange> = N extends Numbers[number] ? Decrements[N] : never;
-export type Increment<N extends Numbers[number] | OutOfRange> = N extends Numbers[number] ? Increments[N] : never;
+export type Decrement<N extends Numbers | OutOfRange> = N extends Numbers ? DecrementTuple[N] : never;
+export type Increment<N extends Numbers | OutOfRange> = N extends Numbers ? IncrementTuple[N] : never;
