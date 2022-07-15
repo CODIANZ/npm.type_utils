@@ -1,8 +1,8 @@
 import { Numbers, Decrement, Underflow } from "./number";
 
 type RepeatMain<
-  T,
   N extends Numbers | Underflow,
+  T,
   ARR extends any[]
-> = N extends 0 ? ARR : RepeatMain<T, Decrement<N>, [...ARR, T]>;
-export type Repeat<T, N extends Numbers> = RepeatMain<T, N, []>;
+> = N extends 0 ? ARR : RepeatMain<Decrement<N>, T, [...ARR, T]>;
+export type Repeat<N extends Numbers, T> = RepeatMain<N, T, []>;
