@@ -6,7 +6,7 @@
 ### Repeat
 
 ```ts
-type X = Repeat<true, 5>; /* [true, true, true, true, true] */
+type X = Repeat<5, true>; /* [true, true, true, true, true] */
 ```
 
 ## Tuple Operators
@@ -15,7 +15,7 @@ type X = Repeat<true, 5>; /* [true, true, true, true, true] */
 
 ```ts
 type X = TupleFlatten<[[[1], 2], [3, 4], 5]>; /* 1, 2, 3, 4, 5 */
-type Y = Repeat<[true, false], 2>; /* [[true, false], [true, false]] */
+type Y = Repeat<2, [true, false]>; /* [[true, false], [true, false]] */
 type Z = TupleFlatten<Y>; /* [true, false, true, false] */
 ```
 
