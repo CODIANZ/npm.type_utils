@@ -1,7 +1,7 @@
 type _COUNTER = any[];
 
 export type Increment<C extends _COUNTER> = [...C, any];
-export type Decrement<C extends _COUNTER> = C extends [...infer U, any] ? U : [];
+export type Decrement<C extends _COUNTER> = C extends [...infer U, any] ? U : never;
 export type Value<C extends _COUNTER> = C["length"];
 
 type RepeatMain<
