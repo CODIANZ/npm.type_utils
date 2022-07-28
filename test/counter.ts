@@ -15,6 +15,9 @@ static_assert<IsSame<Value<C099>,  99>>(true);
 static_assert<IsSame<Value<Increment<Decrement<C100>>>, 100>>(true);
 
 type C000 = Counter<0>;
+static_assert<IsSame<Value<C000>, 0>>(true);
+static_assert<IsSame<Value<Increment<C000>>, 1>>(true);
+static_assert<IsSame<Value<Decrement<C000>>, never>>(true);
 static_assert<IsSame<Decrement<C000>, never>>(true);
 
 static_assert<IsSame<Repeat<5, true>, [true, true, true, true, true]>>(true);
