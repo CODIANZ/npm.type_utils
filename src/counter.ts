@@ -1,7 +1,7 @@
-type _COUNTER = any[];
+type _COUNTER = never[];
 
-export type Increment<C extends _COUNTER> = [...C, any];
-export type Decrement<C extends _COUNTER> = C extends [...infer U, any] ? U : never;
+export type Increment<C extends _COUNTER> = [...C, never];
+export type Decrement<C extends _COUNTER> = C extends [...infer U, never] ? U : never;
 export type Value<C extends _COUNTER> = C["length"];
 
 type RepeatMain<
@@ -9,8 +9,8 @@ type RepeatMain<
   T,
   R extends any[] = [],
   C extends _COUNTER = []
-  > = N extends Value<C> ? R : RepeatMain<N, T, [T, ...R], Increment<C>>;
+  > = N extends Value<C> ? R : RepeatMain<N, T, [...R, T], Increment<C>>;
 export type Repeat<N extends number, T> = RepeatMain<N, T>;
 
-export type Counter<N extends number> = Repeat<N, any>;
+export type Counter<N extends number> = Repeat<N, never>;
 

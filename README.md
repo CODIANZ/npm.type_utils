@@ -1,5 +1,24 @@
 # type_utilities
 
+## Counter
+
+The counter used with the Generics parameter.
+
+```ts
+type C100 = Counter<100>;
+type C101 = Increment<C100>;
+type C099 = Decrement<C100>;
+type V100 = Value<C100>; /* 100 */
+type V101 = Value<C101>; /* 101 */
+type V099 = Value<C099>; /*  99 */
+
+type C000 = Counter<0>;
+type Cxxx = Decrement<C000>; /* never */
+type Vxxx = Value<Cxxx>;     /* never */
+
+/* Matching of counter values ​​looks like this */
+type X = Value<C100> extends 100 ? true : false; /* true */
+```
 
 ## Tuple Creators
 
