@@ -86,7 +86,7 @@ const _2: Drop<X, "a"> = {
 };
 ```
 
-## As
+## as_
 
 ### description
 
@@ -111,17 +111,22 @@ function bar() {
   return p;
 }
 
-/** terrible code... */
+/** type checking is passed through */
 function baz() {
-  return {x: 123, y: 456} as X;
+  return {x: "a", y: 456} as X;
+}
+
+/** type checking is passed through */
+function baz2() {
+  return <X>{x: "a", y: 456};
 }
 
 /** inference with As */
 function hoge() {
-  return As<X>({x: "a"});
+  return as_<X>({x: "a"});
 }
 
 function fuga() {
-  return As<X>({x: 123, y: 456}); /* <- error */
+  return as_<X>({x: "a", y: 456}); /* <- error */
 }
 ```
