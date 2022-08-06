@@ -86,7 +86,7 @@ const _2: Drop<X, "a"> = {
 };
 ```
 
-## As
+## as_
 
 ### description
 
@@ -113,15 +113,15 @@ function bar() {
 
 /** terrible code... */
 function baz() {
-  return {x: 123, y: 456} as X;
+  return {x: "a", y: 456} as X;
 }
 
 /** inference with As */
 function hoge() {
-  return As<X>({x: "a"});
+  return as_<X>({x: "a"});
 }
 
 function fuga() {
-  return As<X>({x: 123, y: 456}); /* <- error */
+  return as_<X>({x: "a", y: 456}); /* <- error */
 }
 ```
