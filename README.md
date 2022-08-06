@@ -111,9 +111,14 @@ function bar() {
   return p;
 }
 
-/** terrible code... */
+/** type checking is passed through */
 function baz() {
   return {x: "a", y: 456} as X;
+}
+
+/** type checking is passed through */
+function baz2() {
+  return <X>{x: "a", y: 456};
 }
 
 /** inference with As */
