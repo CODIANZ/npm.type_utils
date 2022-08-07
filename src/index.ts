@@ -7,5 +7,6 @@ export * from "./tuple";
 export * from "./type_traits";
 export * from "./prepare";
 export * from "./array";
-
+export * from "./literal";
+export * from "./deep_key_of";
 
