@@ -12,5 +12,7 @@ export * from "./optional"
 export * from "./partial";
 export * from "./readonly";
 export * from "./literal";
-export * from "./deep_key_of";
+
+/** > TS4.x */
+// export * from "./deep_key_of";
 
