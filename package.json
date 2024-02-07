@@ -1,6 +1,6 @@
 {
   "name": "@codianz/type_utils",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "type operation utilities.",
   "main": "./dist/index.js",
   "scripts": {
