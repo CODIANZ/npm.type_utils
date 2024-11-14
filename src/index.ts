@@ -14,6 +14,6 @@ export * from "./readonly";
 export * from "./has_value"
 
 /** > TS4.x */
-// export * from "./deep_key_of";
-// export * from "./literal";
+export * from "./deep_key_of";
+export * from "./literal";
 
